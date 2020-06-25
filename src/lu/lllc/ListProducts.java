@@ -70,7 +70,7 @@ public class ListProducts extends HttpServlet {
 		try {
 			statement = connection.createStatement();
 		} catch (SQLException e) {
-			throw e;
+			
 			
 		}
 
