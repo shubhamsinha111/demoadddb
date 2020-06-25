@@ -9,23 +9,23 @@ public class DBInfo {
 	static String rootpassword;
 	public static void main(String []args)
 	{
-	String host = "mysql"; // In most cases you will use
-													// localhost
+	String host = "mysql"; // In most cases you will use  localhost
+													
 	//static String DBname = "lllc";
 	int port = 3306; // This is for MySQL
 	
 
 	//static String user = "user";
 
-	user = System.getProperty("MYSQL_USER") ;
+	user = System.getenv("MYSQL_USER") ;
     System.out.println("Username using system property: "  + user);
 
 
-	password = System.getProperty("MYSQL_PASSWORD") ;
+	password = System.getenv("MYSQL_PASSWORD") ;
 	
-   rootpassword = System.getProperty("MYSQL_ROOT_PASSWORD") ;
+   rootpassword = System.getenv("MYSQL_ROOT_PASSWORD") ;
 	
-	String DBname = System.getProperty("MYSQL_DATABASE") ;
+	String DBname = System.getenv("MYSQL_DATABASE") ;
 	
 	 mySQLdbURL = "jdbc:mysql://" + host + ":" + port + "/"
 			+ DBname;

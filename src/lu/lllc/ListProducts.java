@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  * Servlet implementation class ListProducts
@@ -59,10 +60,13 @@ public class ListProducts extends HttpServlet {
 		try {
 			connection = DriverManager.getConnection(dbURL, user, password);
 		} catch (SQLException e) {
+			JOptionPane.showMessageDialog(null, "Please provide numeric input only", "Invalid input", JOptionPane.PLAIN_MESSAGE);
 			System.out.println("Error. Connection problem: " + e);
 			return;
 		}
-
+		
+			
+		
 		try {
 			statement = connection.createStatement();
 		} catch (SQLException e) {

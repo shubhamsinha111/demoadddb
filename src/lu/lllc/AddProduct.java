@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 /**
  * Servlet implementation class AddProduct
@@ -51,6 +52,10 @@ public class AddProduct extends HttpServlet {
 			Class.forName(DBInfo.getDriver());
 		} catch (ClassNotFoundException e) {
 			System.out.println("Error. Driver class not found: " + e);
+		}
+		catch(Exception e)
+		{
+			JOptionPane.showMessageDialog(null, "connection not successful", "No Connection", JOptionPane.PLAIN_MESSAGE);
 		}
 		
 		try {
