@@ -70,8 +70,8 @@ public class ListProducts extends HttpServlet {
 		try {
 			statement = connection.createStatement();
 		} catch (SQLException e) {
-			System.out.println("Error. Can not create the statement: " + e);
-			return;
+			throw e;
+			
 		}
 
 		String searchString = "SELECT * FROM products";
